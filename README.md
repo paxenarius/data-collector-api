@@ -1,1 +1,0 @@
-# ajiragis-api
