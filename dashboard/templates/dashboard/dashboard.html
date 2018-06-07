@@ -1,4 +1,6 @@
 {% extends 'ajiragis_api/base.html' %}
+{% load socialaccount %}
+{% providers_media_js %}
 {% load staticfiles %}
 {% block navbar %}
 {% include 'ajiragis_api/nav.html' %}
@@ -19,7 +21,29 @@
 
     <!-- Main content -->
     <section class="content">
-      <!-- Small boxes (Stat box) -->
+{#      <!-- Small boxes (Stat box) -->#}
+{#        <div class="row">#}
+{#            <div class="col-md-4">#}
+{#                <div class="small-box bg-aqua">#}
+{#                    <h1>Github Authentication</h1>#}
+{#                    {% if user.is_authenticated %}#}
+{#                    <p>Welcome {{ user.username }} !!!</p>#}
+{#                    {% else %}#}
+{#                    <a href="{% provider_login_url 'github' %}">Github Sign Up</a>#}
+{#                    {% endif %}#}
+{#                </div>#}
+{#            </div>#}
+{#                    <div class="col-md-4">#}
+{#                <div class="small-box bg-aqua">#}
+{#                    <h1>Facebook Authentication</h1>#}
+{#                    {% if user.is_authenticated %}#}
+{#                    <p>Welcome {{ user.username }} !!!</p>#}
+{#                    {% else %}#}
+{#                    <a href="{% provider_login_url "facebook" method="js_sdk" %}">Facebook Sign Up</a>#}
+{#                    {% endif %}#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
       <div class="row">
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->

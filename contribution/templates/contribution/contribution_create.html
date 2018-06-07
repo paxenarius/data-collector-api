@@ -1,0 +1,53 @@
+{% extends 'ajiragis_api/base.html' %}
+{% load socialaccount %}
+{% providers_media_js %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block navbar %}
+{% include 'ajiragis_api/nav.html' %}
+{% endblock %}
+{% block content %}
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Ajira Contribute
+        <small>Create</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Ajira Contribute</a></li>
+        <li class="active">Create</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Ajira Contribute</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form enctype="multipart/form-data" role="form" method="post" action="{% url 'contribute-create' %}" >
+                {% csrf_token %}
+              <div class="box-body">
+                {{ form | crispy }}
+              </div>
+              <!-- /.box-body -->
+
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary btn-block">Submit</button>
+              </div>
+            </form>
+          </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- /.content -->
+  </div>
+{% endblock content %}
