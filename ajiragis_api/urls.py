@@ -19,14 +19,14 @@ from dashboard.views import DashboardTemplateView, SocialLoginTemplateView, Priv
 from contribution.views import ContributionListView, ContributionCreateView
 
 urlpatterns = [
+    path('', SocialLoginTemplateView.as_view(), name='social'),
+    path('privacypolicy/', PrivacyPolicyTemplateView.as_view(), name='privacypolicy'),
     path('admin/', admin.site.urls),
     path('accounts/login/', SocialLoginTemplateView.as_view(), name='signup'),
     path('accounts/', include('allauth.urls')),
-    path('', SocialLoginTemplateView.as_view(), name='social'),
     path('contributions/', include('contribution.urls')),
-    path('dashboard', DashboardTemplateView.as_view(), name='dashboard'),
+    path('dashboard/', DashboardTemplateView.as_view(), name='dashboard'),
     path('api/v1/', include('api.urls')),
     path('users/', include('users.urls')),
     path('users/', include('django.contrib.auth.urls')),
-    path('privacypolicy/', PrivacyPolicyTemplateView.as_view(), name='privacypolicy'),
 ]
