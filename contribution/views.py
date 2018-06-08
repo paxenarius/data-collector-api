@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView
@@ -7,7 +8,7 @@ from contribution.models import Data, Language
 from contribution.serializers import LanguageSerializer, ContributionSerializer
 
 
-class ContributionCreateView(CreateView):
+class ContributionCreateView(LoginRequiredMixin, CreateView):
     model = Data
     fields = ['language', 'text', 'file']
     template_name = 'contribution/contribution_create.html'
@@ -18,7 +19,7 @@ class ContributionCreateView(CreateView):
         return super().form_valid(form)
 
 
-class ContributionListView(ListView):
+class ContributionListView(LoginRequiredMixin, ListView):
     model = Data
     template_name = 'contribution/contribution_list.html'
 

@@ -20,11 +20,11 @@ from contribution.views import ContributionListView, ContributionCreateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/login/', SocialLoginTemplateView.as_view(), name='signup'),
     path('accounts/', include('allauth.urls')),
-    path('login/', SocialLoginTemplateView.as_view(), name='social'),
-    path('login/', SocialLoginTemplateView.as_view(), name='signup'),
+    path('', SocialLoginTemplateView.as_view(), name='social'),
     path('contributions/', include('contribution.urls')),
-    path('', DashboardTemplateView.as_view(), name='dashboard'),
+    path('dashboard', DashboardTemplateView.as_view(), name='dashboard'),
     path('api/v1/', include('api.urls')),
     path('users/', include('users.urls')),
     path('users/', include('django.contrib.auth.urls')),
