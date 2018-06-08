@@ -16,7 +16,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from dashboard.views import DashboardTemplateView, SocialLoginTemplateView, PrivacyPolicyTemplateView
-from contribution.views import ContributionListView, ContributionCreateView
 
 urlpatterns = [
     path('', SocialLoginTemplateView.as_view(), name='social'),
