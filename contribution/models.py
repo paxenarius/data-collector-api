@@ -27,7 +27,7 @@ class Data(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT)
     language = models.ForeignKey(Language, on_delete=PROTECT)
     text = models.TextField()
-    file = models.FileField(blank=True, null=True, upload_to='files')
+    file = models.FileField(blank=True, null=True)
     approved = models.BooleanField(default=False)
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
