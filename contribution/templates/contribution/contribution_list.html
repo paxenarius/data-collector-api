@@ -50,7 +50,11 @@
                         <th>{{ data.user.username }}</th>
                         <td>{{ data.language }}</td>
                         <td>{{ data.text | escape}}</td>
-                        <td>{{ data.file.name }}</td>
+                        <td> {% if data.file %}
+                            <a href="/media/{{ data.file }}" target="_blank">{{ data.file.name }}</a>
+                            {% else %}
+                        {% endif %}
+                        </td>
                         <td>
                             {% if data.approved %}
                                 <span class="label label-success">Approved</span>
