@@ -1,2 +1,2 @@
-# data-collector-api
-Data collector api interface
+# ajiragis-api
+Ajira GIS API interface
