@@ -16,7 +16,6 @@ pip-selfcheck.json
 ### Python template
 # Byte-compiled / optimized / DLL files
 # Byte-compiled / optimized / DLL files
->>>>>>> 60aac4189597f18f78f46f57dcb25721000285da
 *$py.class
 
 # C extensions
@@ -171,3 +170,4 @@ fabric.properties
 
 /static/files
 media/
+__pycache__
