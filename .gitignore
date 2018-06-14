@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Created by .ignore support plugin (hsz.mobi)
 ### VirtualEnv template
 # Virtualenv
@@ -14,7 +15,8 @@ pyvenv.cfg
 pip-selfcheck.json
 ### Python template
 # Byte-compiled / optimized / DLL files
-__pycache__/
+# Byte-compiled / optimized / DLL files
+>>>>>>> 60aac4189597f18f78f46f57dcb25721000285da
 *$py.class
 
 # C extensions
@@ -23,10 +25,10 @@ __pycache__/
 # Distribution / packaging
 build/
 develop-eggs/
+dist/
 downloads/
 eggs/
 .eggs/
-lib/
 lib64/
 parts/
 sdist/
@@ -95,7 +97,6 @@ celerybeat-schedule
 
 # Environments
 .env
-.venv
 env/
 venv/
 ENV/
