@@ -52,7 +52,6 @@
                         <td>{{ data.text | escape}}</td>
                         <td> {% if data.file %}
                             <a href="/media/{{ data.file }}" target="_blank">{{ data.file.name }}</a>
-                            {% else %}
                         {% endif %}
                         </td>
                         <td>
@@ -63,7 +62,7 @@
                             {% endif %}
                         </td>
                         <td>{{ data.created | timesince }}</td>
-                        <td><button type="button" class="btn btn-info btn-xs">Approve</button></td>
+                        <td><a href="{% url 'contribute-approve' data.pk %}" type="button" class="btn btn-info btn-xs">Approve</a></td>
                     </tr>
                 {% endfor %}
 

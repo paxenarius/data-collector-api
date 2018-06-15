@@ -1,7 +1,7 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, ListView
+from django.views.generic import CreateView, ListView, UpdateView
 from rest_framework import viewsets
 
 from contribution.models import Data, Language
@@ -22,6 +22,13 @@ class ContributionCreateView(LoginRequiredMixin, CreateView):
 class ContributionListView(LoginRequiredMixin, ListView):
     model = Data
     template_name = 'contribution/contribution_list.html'
+
+
+class ContributionApprovalView(UpdateView):
+    model = Data
+    fields = ['approved']
+    template_name = 'contribution/contribution_approval.html'
+    success_url = reverse_lazy('contribute-list')
 
 
 class LanguageViewSet(viewsets.ModelViewSet):
