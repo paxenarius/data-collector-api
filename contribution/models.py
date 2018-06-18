@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.contrib.auth.models import User
+from django.core.validators import FileExtensionValidator
 from django.db import models
 from django.db.models import PROTECT
 
@@ -27,7 +28,7 @@ class Data(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT)
     language = models.ForeignKey(Language, on_delete=PROTECT)
     text = models.TextField()
-    file = models.FileField(blank=True, null=True)
+    file = models.FileField(blank=True, null=True, validators=[FileExtensionValidator(['pdf', 'docx', 'doc'])])
     approved = models.BooleanField(default=False)
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
