@@ -12,6 +12,7 @@
 html,
 body {
   height: 100%;
+  background: #e53935;
 }
 .layout-boxed html,
 .layout-boxed body {
@@ -3242,11 +3243,11 @@ table.text-center th {
 }
 .login-logo a,
 .register-logo a {
-  color: #444;
+  color: #ddd;
 }
 .login-page,
 .register-page {
-  background: #d2d6de;
+  background: #e53935;
 }
 .login-box,
 .register-box {

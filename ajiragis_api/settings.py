@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
@@ -27,7 +26,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -38,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'django.contrib.humanize',
     # Third Party Apps
     'allauth',
     'allauth.account',
@@ -52,6 +51,7 @@ INSTALLED_APPS = [
     'rest_auth',
     'rest_auth.registration',
     'corsheaders',
+    'livereload',
     # Self Apps
     'dashboard',
     'contribution',
@@ -68,6 +68,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'livereload.middleware.LiveReloadScript',
 ]
 
 ROOT_URLCONF = 'ajiragis_api.urls'
@@ -89,7 +90,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'ajiragis_api.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
@@ -133,10 +133,15 @@ AUTHENTICATION_BACKENDS = (
 
 SOCIALACCOUNT_PROVIDERS = {
     'facebook': {
-        'METHOD': 'oauth2',
+        'METHOD':
+            'oauth2',
         'SCOPE': ['email', 'public_profile', 'user_friends'],
-        'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
-        'INIT_PARAMS': {'cookie': True},
+        'AUTH_PARAMS': {
+            'auth_type': 'reauthenticate'
+        },
+        'INIT_PARAMS': {
+            'cookie': True
+        },
         'FIELDS': [
             'id',
             'email',
@@ -150,25 +155,26 @@ SOCIALACCOUNT_PROVIDERS = {
             'gender',
             'updated_time',
         ],
-        'EXCHANGE_TOKEN': True,
-        'LOCALE_FUNC': 'path.to.callable',
-        'VERIFIED_EMAIL': False,
-        'VERSION': 'v2.12',
+        'EXCHANGE_TOKEN':
+            True,
+        'LOCALE_FUNC':
+            'path.to.callable',
+        'VERIFIED_EMAIL':
+            False,
+        'VERSION':
+            'v2.12',
     }
 }
 
-
 #facebook
 SOCIAL_AUTH_FACEBOOK_KEY = 'secret!'  # App ID
-SOCIAL_AUTH_FACEBOOK_SECRET ='secret!' #app key
+SOCIAL_AUTH_FACEBOOK_SECRET = 'secret!'  #app key
 
 SITE_ID = 1
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
-CORS_ORIGIN_WHITELIST = (
-  'http://localhost:3000'
-)
+CORS_ORIGIN_WHITELIST = ('http://localhost:3000')
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
@@ -181,7 +187,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
