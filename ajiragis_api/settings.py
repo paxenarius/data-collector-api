@@ -163,7 +163,16 @@ SOCIALACCOUNT_PROVIDERS = {
             False,
         'VERSION':
             'v2.12',
-    }
+    },
+    'google': {
+            'SCOPE': [
+                'profile',
+                'email',
+            ],
+            'AUTH_PARAMS': {
+                'access_type': 'offline',
+            }
+        }
 }
 
 #facebook
