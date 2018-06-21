@@ -1,5 +1,8 @@
 {% load staticfiles %}
-<aside class="main-sidebar">
+{% load permission_tags %}
+
+{% if user|can:'manage_contribution' %}
+  <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
       <!-- sidebar menu: : style can be found in sidebar.less -->
@@ -22,3 +25,4 @@
     </section>
     <!-- /.sidebar -->
   </aside>
+{% endif %}

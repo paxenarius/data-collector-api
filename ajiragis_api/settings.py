@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'rest_auth',
     'rest_auth.registration',
+    'rolepermissions',
     'corsheaders',
     'livereload',
     # Self Apps
@@ -105,7 +106,7 @@ AUTH_USER_MODEL = 'users.CustomUser'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-LOGIN_REDIRECT_URL = 'contribute-list'
+LOGIN_REDIRECT_URL = 'dashboard'
 LOGOUT_REDIRECT_URL = 'login'
 
 # Password validation
@@ -196,3 +197,6 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 MEDIA_URL = '/admin/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+# Permissions
+ROLEPERMISSIONS_MODULE = 'ajiragis_api.roles'
