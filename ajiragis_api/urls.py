@@ -30,4 +30,5 @@ urlpatterns = [
     path('admin/api/v1/', include('api.urls')),
     path('admin/users/', include('users.urls')),
     path('admin/users/', include('django.contrib.auth.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(
+    settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

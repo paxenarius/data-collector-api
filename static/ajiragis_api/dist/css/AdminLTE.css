@@ -61,6 +61,10 @@ body {
   margin-left: 230px;
   z-index: 820;
 }
+.content-wrapper-nomargin,
+.main-footer-nomargin {
+  margin-left: 0;
+}
 .layout-top-nav .content-wrapper,
 .layout-top-nav .main-footer {
   margin-left: 0;
@@ -304,6 +308,9 @@ a:focus {
 }
 .main-header .navbar-brand {
   color: #fff;
+}
+.main-header .logo-left {
+  text-align: left;
 }
 .content-header {
   position: relative;
@@ -2377,6 +2384,9 @@ a:focus {
  */
 .alert {
   border-radius: 3px;
+}
+.alert-margin {
+  margin: 0 5px;
 }
 .alert h4 {
   font-weight: 600;
