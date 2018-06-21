@@ -20,15 +20,15 @@ from django.urls import path, include
 from dashboard.views import DashboardTemplateView, SocialLoginTemplateView, PrivacyPolicyTemplateView
 
 urlpatterns = [
-    path('admin/', SocialLoginTemplateView.as_view(), name='social'),
-    path('admin/privacypolicy/', PrivacyPolicyTemplateView.as_view(), name='privacypolicy'),
-    path('admin/admin/', admin.site.urls),
-    path('admin/accounts/login/', SocialLoginTemplateView.as_view(), name='signup'),
-    path('admin/accounts/', include('allauth.urls')),
-    path('admin/contributions/', include('contribution.urls')),
-    path('admin/dashboard/', DashboardTemplateView.as_view(), name='dashboard'),
-    path('admin/api/v1/', include('api.urls')),
-    path('admin/users/', include('users.urls')),
-    path('admin/users/', include('django.contrib.auth.urls')),
+    path('', SocialLoginTemplateView.as_view(), name='social'),
+    path('privacypolicy/', PrivacyPolicyTemplateView.as_view(), name='privacypolicy'),
+    path('admin/', admin.site.urls),
+    path('accounts/login/', SocialLoginTemplateView.as_view(), name='signup'),
+    path('accounts/', include('allauth.urls')),
+    path('contributions/', include('contribution.urls')),
+    path('dashboard/', DashboardTemplateView.as_view(), name='dashboard'),
+    path('api/v1/', include('api.urls')),
+    path('users/', include('users.urls')),
+    path('users/', include('django.contrib.auth.urls')),
 ] + static(
     settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
