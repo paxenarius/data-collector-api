@@ -20,15 +20,15 @@ from django.urls import path, include
 from dashboard.views import DashboardTemplateView, SocialLoginTemplateView, PrivacyPolicyTemplateView
 
 urlpatterns = [
-    path('', SocialLoginTemplateView.as_view(), name='social'),
-    path('privacypolicy/', PrivacyPolicyTemplateView.as_view(), name='privacypolicy'),
-    path('admin/', admin.site.urls),
-    path('accounts/login/', SocialLoginTemplateView.as_view(), name='signup'),
-    path('accounts/', include('allauth.urls')),
-    path('contributions/', include('contribution.urls')),
-    path('dashboard/', DashboardTemplateView.as_view(), name='dashboard'),
-    path('api/v1/', include('api.urls')),
-    path('users/', include('users.urls')),
-    path('users/', include('django.contrib.auth.urls')),
+    path('data-collector/', SocialLoginTemplateView.as_view(), name='social'),
+    path('data-collector/privacypolicy/', PrivacyPolicyTemplateView.as_view(), name='privacypolicy'),
+    path('data-collector/admin/', admin.site.urls),
+    path('data-collector/accounts/login/', SocialLoginTemplateView.as_view(), name='signup'),
+    path('data-collector/accounts/', include('allauth.urls')),
+    path('data-collector/contributions/', include('contribution.urls')),
+    path('data-collector/dashboard/', DashboardTemplateView.as_view(), name='dashboard'),
+    path('data-collector/api/v1/', include('api.urls')),
+    path('data-collector/users/', include('users.urls')),
+    path('data-collector/users/', include('django.contrib.auth.urls')),
 ] + static(
     settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

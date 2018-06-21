@@ -11,9 +11,9 @@ class DashboardTemplateView(LoginRequiredMixin, TemplateView):
 
   def get(self, request):
     if (has_permission(request.user, 'manage_contribution')):
-      return HttpResponseRedirect('/contributions')
+      return HttpResponseRedirect('/data-collector/contributions')
 
-    return HttpResponseRedirect('/contributions/create')
+    return HttpResponseRedirect('/data-collector/contributions/create')
 
 
 class SocialLoginTemplateView(TemplateView):
