@@ -33,7 +33,12 @@ class Data(models.Model):
   user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT)
   language = models.ForeignKey(Language, on_delete=PROTECT)
   text = models.TextField(blank=True, null=True)
-  file = models.FileField(blank=True, null=True, validators=[FileExtensionValidator(['pdf', 'docx', 'doc'])])
+  file = models.FileField(
+      blank=True,
+      null=True,
+      validators=[FileExtensionValidator(['pdf', 'docx', 'doc'])],
+      verbose_name='File: (Only pdf, docx or doc files with a maximum size of 2MB are allowed.)',
+  )
   approved = models.BooleanField(default=False)
   updated = models.DateTimeField(auto_now=True)
   created = models.DateTimeField(auto_now_add=True)
