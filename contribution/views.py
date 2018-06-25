@@ -24,7 +24,7 @@ class ContributionCreateView(LoginRequiredMixin, CreateView):
 
   def get_success_url(self):
     messages.add_message(self.request, messages.SUCCESS,
-                         'Thank you for your contribution. Feel free to contribut some more!')
+                         'Thank you for your contribution. Feel free to contribute some more!')
     return reverse('contribute-create')
 
 
