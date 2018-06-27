@@ -1,10 +1,13 @@
 from django.conf.urls import url
 from django.urls import include, path
 from rest_framework import routers
+from rest_framework_swagger.views import get_swagger_view
 
 from api.views import FacebookLogin, TwitterLogin
 from contribution.views import LanguageViewSet, ContributionViewSet
 from users.views import CustomUserListView
+
+schema_view = get_swagger_view(title='Data Collector API')
 
 router = routers.DefaultRouter()
 router.register(r'languages', LanguageViewSet)
@@ -17,5 +20,6 @@ urlpatterns = [
     url(r'^rest-auth/facebook/$', FacebookLogin.as_view(), name='fb_login'),
     url(r'^rest-auth/twitter/$', TwitterLogin.as_view(), name='twitter_login'),
     url(r'^', include(router.urls)),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'doc/', schema_view)
 ]
