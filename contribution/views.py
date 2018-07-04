@@ -34,6 +34,19 @@ class ContributionListView(LoginRequiredMixin, HasPermissionsMixin, ListView):
   template_name = 'contribution/contribution_list.html'
 
 
+class IndividualContributionList(LoginRequiredMixin, HasPermissionsMixin, ListView):
+  """
+  Fetch the contributions of an individual user
+  """
+
+  required_permission = 'manage_contribution'
+  model = Data
+  template_name = 'contribution/individual_contribution.html'
+
+  def get_queryset(self, *args, **kwargs):
+    return Data.objects.filter(user=self.request.user)
+
+
 class ContributionApprovalView(HasPermissionsMixin, UpdateView):
   required_permission = 'manage_contribution'
   model = Data
