@@ -9,8 +9,6 @@ class LanguageSerializer(serializers.ModelSerializer):
 
 
 class ContributionSerializer(serializers.ModelSerializer):
-    user_name = serializers.ReadOnlyField(source='user.name')
-    language_name =  serializers.ReadOnlyField(source='language.name')
 
     class Meta:
         model = Data
