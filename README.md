@@ -41,9 +41,16 @@ $ source venv/bin/activate
 $ pip3 install -r requirements.txt
 ```
 
-## Running
+## Running in Production Mode
 
 ```bash
 $ python3 manage.py runserver
 ```
+
+
+## Running in Dev Mode
+
+```bash
+$ python3 manage.py runserver --settings=ajiragis_api.dev_settings
+
 Application will run on port [8000](http://localhost:8000)
