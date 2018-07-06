@@ -34,12 +34,10 @@ class ContributionListView(LoginRequiredMixin, HasPermissionsMixin, ListView):
   template_name = 'contribution/contribution_list.html'
 
 
-class IndividualContributionList(LoginRequiredMixin, HasPermissionsMixin, ListView):
+class IndividualContributionList(LoginRequiredMixin, ListView):
   """
   Fetch the contributions of an individual user
   """
-
-  required_permission = 'manage_contribution'
   model = Data
   template_name = 'contribution/individual_contribution.html'
 
