@@ -9,6 +9,7 @@ class LanguageSerializer(serializers.ModelSerializer):
 
 
 class ContributionSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = Data
         fields = ('id', 'user', 'language', 'text', 'file')

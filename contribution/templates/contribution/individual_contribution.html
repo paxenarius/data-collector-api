@@ -17,7 +17,8 @@
                 <small>Create</small>
             </h1>
             <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Ajira Contribute</a></li>
+                <li><a href="{% url 'contribute-create' %}"><i class="fa fa-dashboard"></i> Ajira Contribute</a></li>
+                <li><a href="{% url 'individual-contribution-list' %}" ><i class="fa fa-dashboard"></i> My Contributions </a></li>
             </ol>
         </section>
 
@@ -39,9 +40,8 @@
                   <th>Language</th>
                   <th>Text</th>
                   <th>File</th>
-                  <th>Status</th>
-                  <th>Date</th>
-                  <th>Action</th>
+                    <th>Status</th>
+                    <th>Date</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -62,11 +62,6 @@
                             {% endif %}
                         </td>
                         <td>{{ data.created | naturaltime }}</td>
-                        <td>
-                            {% if not data.approved %}
-                            <a href="{% url 'contribute-approve' data.pk %}" type="button" class="btn btn-info btn-xs">Approve</a>
-                            {% endif %}
-                        </td>
                     </tr>
                 {% endfor %}
 
@@ -77,9 +72,8 @@
                   <th>Language</th>
                   <th>Text</th>
                   <th>File</th>
-                    <th>Status</th>
-                    <th>Date</th>
-                    <th>Action</th>
+                  <th>Status</th>
+                  <th>Date</th>
                 </tr>
                 </tfoot>
               </table>
