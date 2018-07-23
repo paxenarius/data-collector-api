@@ -60,12 +60,6 @@
         <a class="btn btn-block btn-social btn-twitter">
           <i class="fa fa-twitter"></i> Sign in with Twitter
         </a>
-        {% if user.is_authenticated %}
-        <p>Welcome {{ user.username }} !!!</p>
-        {% else %}
-        <a href="{% provider_login_url 'github' %}" class="btn btn-block btn-social btn-github">
-          <i class="fa fa-github"></i> Sign in with GitHub</a>
-        {% endif %}
       </div>
       <!-- /.social-auth-links -->
 
