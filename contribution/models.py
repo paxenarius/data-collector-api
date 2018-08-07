@@ -50,7 +50,7 @@ class Data(models.Model):
         self.clean()
         if self.approved == True:
             from ajiragis_api.opay import make_deposit
-            make_deposit(1)
+            make_deposit(1, self.user.username)
         return super().save(**kwargs)
 
     def clean(self):

@@ -35,7 +35,7 @@ def get_token(access_code):
     return json.loads(r.text)['access_token']
 
 
-def deposit_opay(token, timestamp):
+def deposit_opay(token, timestamp, phone):
     print('deposit money')
     headers = {
         'Authorization': 'token ' + token,
@@ -48,7 +48,7 @@ def deposit_opay(token, timestamp):
     }
     data = {
         "reference": "RTY34567FGH",
-        "recipient_phone": "254721217172",
+        "recipient_phone": phone,
         "amount": 1
     }
     r = requests.get(DEPOSIT_URL, headers=headers, data=data)
@@ -56,11 +56,11 @@ def deposit_opay(token, timestamp):
     return data
 
 
-def make_deposit(amount):
+def make_deposit(amount, phone):
     access_code = get_access_code()
     token = get_token(access_code)
     if token:
-        deposit = deposit_opay(token, timestamp=datetime.datetime.now())
+        deposit = deposit_opay(token, timestamp=datetime.datetime.now(), phone=phone)
         if deposit['status'] == '200':
             return True
     return False
