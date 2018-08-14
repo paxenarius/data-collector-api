@@ -170,3 +170,5 @@ fabric.properties
 /static/files
 media/
 __pycache__
+migrations
+.idea

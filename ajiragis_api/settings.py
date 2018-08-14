@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'contribution',
     'users',
     'api',
+    'otp'
 ]
 
 MIDDLEWARE = [
@@ -218,3 +219,8 @@ LOGGING = {
         },
     },
 }
+
+# Africa's Talking Configurations
+OTP_EXPIRY = 3 * 60  # Time in seconds of expiry for One Time Pin
+AFRICASTALKING_USERNAME = 'ajiragis'
+AFRICASTALKING_API_KEY = '6d9e2a0e201a8baa4c80d803c4ec9d2b350b72be8b44c78e2e9a36d17fe650d2'

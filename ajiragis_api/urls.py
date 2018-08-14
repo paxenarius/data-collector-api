@@ -30,5 +30,6 @@ urlpatterns = [
     path('data-collector/api/v1/', include('api.urls')),
     path('data-collector/users/', include('users.urls')),
     path('data-collector/users/', include('django.contrib.auth.urls')),
+    path('data-collector/otp/', include('otp.urls')),
 ] + static(
     settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
